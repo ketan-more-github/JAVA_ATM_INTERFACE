@@ -1,5 +1,6 @@
 package code;
 import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -88,6 +89,21 @@ public class Server2 {
 				//show
 				System.out.println("Your Account Balance is : " + s.user_balance );
 				System.out.println();
+				System.out.println("---Do You Want Recipt Of Balance Press 1 to print recipt ");
+				System.out.println();
+				int chq = sc.nextInt();
+				if(chq==1)
+				{
+					FileWriter fw = new FileWriter("C:\\Users\\Admin\\Desktop\\balance_recipt.txt");
+					fw.write("******************Welcome User************************    ");
+					fw.write(System.lineSeparator());
+					fw.write("--Your Current Account Balance is  : " + s.user_balance);
+					fw.close();
+					System.out.println("---Printed Succesfully");
+					System.out.println();
+				}
+				
+				
 				
 			}
 			else if(ch==2)
@@ -179,6 +195,39 @@ public class Server2 {
 					}
 				}
 				System.out.println();
+				
+				System.out.println("---- Do You Want to Print Your Bank Statment Press 1 to Print .");
+				int c = sc.nextInt();
+				if(c==1)
+				{
+					FileWriter fw = new FileWriter("C:\\Users\\Admin\\Desktop\\Bank_statement.txt");
+					fw.write("******************Welcome User************************ ");
+					fw.write(System.lineSeparator());
+					fw.write(System.lineSeparator());
+					fw.write("---Your transictions are : ");
+					fw.write(System.lineSeparator());
+					for(int k : arr)
+					{
+						if(k>0)
+						{
+							fw.write("  Deposit : " + k);
+							fw.write(System.lineSeparator());
+							
+						}
+						else
+						{
+							fw.write("  Withdraw : " + k);
+							fw.write(System.lineSeparator());
+							
+						}
+					}
+					fw.write(System.lineSeparator());
+					fw.write("--Your Current Account Balance is  : " + s.user_balance);
+					fw.close();
+					System.out.println("--bank Statement Printed Succesfuuly");
+					System.out.println();
+					
+				}
 			
 				
 								

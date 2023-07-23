@@ -1,5 +1,8 @@
 package code;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Server {
 
 	public static int transition_history;
@@ -40,6 +43,10 @@ public class Server {
 	public void setTransfer(int transfer) {
 		Server.transfer = transfer;
 	}
+	
+	
+		
+	
 	
 	
 	public static void main(String[] args) {
