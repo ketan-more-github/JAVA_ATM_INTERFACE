@@ -1,0 +1,7 @@
+REad me 
+
+
+User id = 100203
+User password = 1137
+
+user id must be 6 digit length
